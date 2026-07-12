@@ -1,0 +1,39 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "World"
+{
+    def Xform "QualityInspectionCell" (
+        kind = "assembly"
+    )
+    {
+        custom string project:status = "PLACEHOLDER_LAYOUT"
+
+        def Xform "Conveyors"
+        {
+            def Xform "Infeed" { custom string project:assetRole = "infeed_conveyor" }
+            def Xform "Outfeed" { custom string project:assetRole = "outfeed_conveyor" }
+        }
+
+        def Xform "Inspection"
+        {
+            def Camera "Camera" { custom string project:assetRole = "inspection_camera" }
+        }
+
+        def Xform "Sensors"
+        {
+            def Xform "InspectionTrigger" { custom string project:assetRole = "part_sensor" }
+            def Xform "OutfeedCounter" { custom string project:assetRole = "counter_sensor" }
+        }
+
+        def Xform "Robot" { custom string project:assetRole = "reject_robot" }
+        def Xform "RejectBin" { custom string project:assetRole = "reject_bin" }
+        def Xform "Safety" { custom string project:assetRole = "safety_equipment" }
+        def Scope "Products" { custom string project:assetRole = "spawned_products" }
+    }
+}
+

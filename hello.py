@@ -1,0 +1,15 @@
+"""Convenient project entry point for IDE Run actions."""
+
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT / "src"))
+
+from inspection_cell.cli import main  # noqa: E402
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

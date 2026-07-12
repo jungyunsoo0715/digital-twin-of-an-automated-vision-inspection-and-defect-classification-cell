@@ -1,0 +1,16 @@
+#usda 1.0
+(
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+over "World"
+{
+    over "QualityInspectionCell"
+    {
+        custom string project:layerResponsibility = "physics"
+        custom double project:conveyorSpeedMps = 0.35
+        custom double project:jamTimeoutSeconds = 8.0
+    }
+}
+

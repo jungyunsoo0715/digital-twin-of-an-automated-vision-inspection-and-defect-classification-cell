@@ -1,0 +1,16 @@
+{
+  "line": {
+    "conveyor_speed_mps": 0.35,
+    "sensor_to_inspection_distance_m": 1.2,
+    "inspection_time_s": 1.0,
+    "robot_cycle_time_s": 3.2,
+    "defect_probability": 0.1,
+    "jam_timeout_s": 8.0,
+    "robot_pick_failure_probability": 0.0
+  },
+  "simulation": {
+    "parts": 30,
+    "seed": 42
+  }
+}
+

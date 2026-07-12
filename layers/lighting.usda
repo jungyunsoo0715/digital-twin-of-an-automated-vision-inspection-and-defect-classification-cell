@@ -1,0 +1,19 @@
+#usda 1.0
+(
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+over "World"
+{
+    over "QualityInspectionCell"
+    {
+        custom string project:layerResponsibility = "lighting"
+        def DistantLight "KeyLight"
+        {
+            float inputs:intensity = 800
+            float inputs:angle = 0.5
+        }
+    }
+}
+

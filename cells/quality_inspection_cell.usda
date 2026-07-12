@@ -1,0 +1,20 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Z"
+    subLayers = [
+        @../layers/lighting.usda@,
+        @../layers/materials.usda@,
+        @../layers/behavior.usda@,
+        @../layers/physics.usda@,
+        @../layers/layout.usda@
+    ]
+)
+
+over "World" (
+    doc = "Quality inspection cell composition root"
+)
+{
+}
+

@@ -1,0 +1,15 @@
+{
+  "safe": {
+    "conveyor_speed_mps": 0.2,
+    "parts": 100
+  },
+  "baseline": {
+    "conveyor_speed_mps": 0.35,
+    "parts": 100
+  },
+  "high_speed": {
+    "conveyor_speed_mps": 0.5,
+    "parts": 100
+  }
+}
+
