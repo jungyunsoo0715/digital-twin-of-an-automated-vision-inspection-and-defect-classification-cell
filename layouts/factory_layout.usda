@@ -11,29 +11,299 @@ def Xform "World"
         kind = "assembly"
     )
     {
-        custom string project:status = "PLACEHOLDER_LAYOUT"
+        custom string project:status = "MVP_PROXY_LAYOUT"
+
+        def Cube "Floor"
+        {
+            double size = 2
+            double3 xformOp:translate = (0, 0, -0.05)
+            double3 xformOp:scale = (5, 3, 0.05)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
 
         def Xform "Conveyors"
         {
-            def Xform "Infeed" { custom string project:assetRole = "infeed_conveyor" }
-            def Xform "Outfeed" { custom string project:assetRole = "outfeed_conveyor" }
+            def Xform "Infeed"
+            {
+                custom string project:assetRole = "infeed_conveyor"
+                double3 xformOp:translate = (-2.25, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+
+                def Cube "Belt"
+                {
+                    double size = 2
+                    double3 xformOp:translate = (0, 0, 0.8)
+                    double3 xformOp:scale = (2, 0.55, 0.08)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "LeftRail"
+                {
+                    double size = 2
+                    double3 xformOp:translate = (0, 0.62, 0.93)
+                    double3 xformOp:scale = (2, 0.04, 0.13)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "RightRail"
+                {
+                    double size = 2
+                    double3 xformOp:translate = (0, -0.62, 0.93)
+                    double3 xformOp:scale = (2, 0.04, 0.13)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "Support"
+                {
+                    double size = 2
+                    double3 xformOp:translate = (0, 0, 0.38)
+                    double3 xformOp:scale = (1.85, 0.48, 0.38)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+            }
+
+            def Xform "Outfeed"
+            {
+                custom string project:assetRole = "outfeed_conveyor"
+                double3 xformOp:translate = (2.25, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+
+                def Cube "Belt"
+                {
+                    double size = 2
+                    double3 xformOp:translate = (0, 0, 0.8)
+                    double3 xformOp:scale = (2, 0.55, 0.08)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "LeftRail"
+                {
+                    double size = 2
+                    double3 xformOp:translate = (0, 0.62, 0.93)
+                    double3 xformOp:scale = (2, 0.04, 0.13)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "RightRail"
+                {
+                    double size = 2
+                    double3 xformOp:translate = (0, -0.62, 0.93)
+                    double3 xformOp:scale = (2, 0.04, 0.13)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "Support"
+                {
+                    double size = 2
+                    double3 xformOp:translate = (0, 0, 0.38)
+                    double3 xformOp:scale = (1.85, 0.48, 0.38)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+            }
         }
 
         def Xform "Inspection"
         {
-            def Camera "Camera" { custom string project:assetRole = "inspection_camera" }
+            def Cube "LeftPost"
+            {
+                double size = 2
+                double3 xformOp:translate = (0, 1.05, 1.65)
+                double3 xformOp:scale = (0.08, 0.08, 1.65)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "RightPost"
+            {
+                double size = 2
+                double3 xformOp:translate = (0, -1.05, 1.65)
+                double3 xformOp:scale = (0.08, 0.08, 1.65)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "Crossbar"
+            {
+                double size = 2
+                double3 xformOp:translate = (0, 0, 3.25)
+                double3 xformOp:scale = (0.08, 1.13, 0.08)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Camera "Camera"
+            {
+                custom string project:assetRole = "inspection_camera"
+                float focalLength = 24
+                float horizontalAperture = 20.955
+                double3 xformOp:translate = (0, -1.0, 3.05)
+                double3 xformOp:rotateXYZ = (50, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+            }
         }
 
         def Xform "Sensors"
         {
-            def Xform "InspectionTrigger" { custom string project:assetRole = "part_sensor" }
-            def Xform "OutfeedCounter" { custom string project:assetRole = "counter_sensor" }
+            def Xform "InspectionTrigger"
+            {
+                custom string project:assetRole = "part_sensor"
+                double3 xformOp:translate = (-0.35, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+
+                def Cube "Emitter"
+                {
+                    double size = 2
+                    double3 xformOp:translate = (0, -0.78, 1.15)
+                    double3 xformOp:scale = (0.07, 0.07, 0.35)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "Receiver"
+                {
+                    double size = 2
+                    double3 xformOp:translate = (0, 0.78, 1.15)
+                    double3 xformOp:scale = (0.07, 0.07, 0.35)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "DetectionZone"
+                {
+                    double size = 2
+                    uniform token purpose = "guide"
+                    double3 xformOp:translate = (0, 0, 1.0)
+                    double3 xformOp:scale = (0.08, 0.7, 0.28)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+            }
+
+            def Xform "OutfeedCounter"
+            {
+                custom string project:assetRole = "counter_sensor"
+                double3 xformOp:translate = (3.35, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+
+                def Cube "SensorBody"
+                {
+                    double size = 2
+                    double3 xformOp:translate = (0, -0.78, 1.15)
+                    double3 xformOp:scale = (0.07, 0.07, 0.35)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "DetectionZone"
+                {
+                    double size = 2
+                    uniform token purpose = "guide"
+                    double3 xformOp:translate = (0, 0, 1.0)
+                    double3 xformOp:scale = (0.08, 0.7, 0.28)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+            }
         }
 
-        def Xform "Robot" { custom string project:assetRole = "reject_robot" }
-        def Xform "RejectBin" { custom string project:assetRole = "reject_bin" }
-        def Xform "Safety" { custom string project:assetRole = "safety_equipment" }
-        def Scope "Products" { custom string project:assetRole = "spawned_products" }
+        def Xform "Robot"
+        {
+            custom string project:assetRole = "reject_robot"
+            double3 xformOp:translate = (0.45, 1.85, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+
+            def Cylinder "Base"
+            {
+                uniform token axis = "Z"
+                double height = 0.25
+                double radius = 0.45
+                double3 xformOp:translate = (0, 0, 0.125)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+
+            def Cylinder "Pedestal"
+            {
+                uniform token axis = "Z"
+                double height = 0.75
+                double radius = 0.24
+                double3 xformOp:translate = (0, 0, 0.625)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+
+            def Cube "UpperArm"
+            {
+                double size = 2
+                double3 xformOp:translate = (-0.25, -0.18, 1.35)
+                double3 xformOp:rotateXYZ = (0, -28, 30)
+                double3 xformOp:scale = (0.18, 0.18, 0.75)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Cube "Forearm"
+            {
+                double size = 2
+                double3 xformOp:translate = (-0.68, -0.48, 1.85)
+                double3 xformOp:rotateXYZ = (0, 62, 30)
+                double3 xformOp:scale = (0.16, 0.16, 0.6)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Cube "Gripper"
+            {
+                double size = 2
+                double3 xformOp:translate = (-1.1, -0.72, 1.55)
+                double3 xformOp:scale = (0.2, 0.12, 0.08)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "RejectBin"
+        {
+            custom string project:assetRole = "reject_bin"
+            double3 xformOp:translate = (1.85, 1.85, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+
+            def Cube "Bottom"
+            {
+                double size = 2
+                double3 xformOp:translate = (0, 0, 0.08)
+                double3 xformOp:scale = (0.55, 0.55, 0.08)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "FrontWall"
+            {
+                double size = 2
+                double3 xformOp:translate = (0, -0.52, 0.55)
+                double3 xformOp:scale = (0.55, 0.05, 0.55)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "BackWall"
+            {
+                double size = 2
+                double3 xformOp:translate = (0, 0.52, 0.55)
+                double3 xformOp:scale = (0.55, 0.05, 0.55)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "LeftWall"
+            {
+                double size = 2
+                double3 xformOp:translate = (-0.52, 0, 0.55)
+                double3 xformOp:scale = (0.05, 0.55, 0.55)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "RightWall"
+            {
+                double size = 2
+                double3 xformOp:translate = (0.52, 0, 0.55)
+                double3 xformOp:scale = (0.05, 0.55, 0.55)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Safety"
+        {
+            custom string project:assetRole = "safety_equipment"
+        }
+
+        def Scope "Products"
+        {
+            custom string project:assetRole = "spawned_products"
+        }
     }
 }
-

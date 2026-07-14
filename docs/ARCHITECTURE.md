@@ -59,7 +59,7 @@ cells/quality_inspection_cell.usda       # Stage 진입점, 아래 레이어 집
 - 반복 펜스·박스·부품은 instanceable Reference를 우선 사용한다.
 - 정상/고속 운전, 제품 종류처럼 교체 가능한 구성은 Variant 후보로 둔다.
 
-현재 USDA 파일은 에셋 경로가 정해지기 전에도 열 수 있는 구성 스켈레톤이다. 실제 에셋 도입 후 `factory_layout.usda`의 placeholder Xform을 Reference prim으로 교체한다.
+현재 USDA 파일은 에셋 경로가 정해지기 전에도 열 수 있도록 단순 도형으로 만든 MVP 프록시 레이아웃이다. 실제 에셋 도입 후 `factory_layout.usda`의 프록시 도형을 Reference prim으로 교체한다.
 
 ## 코드 책임
 
@@ -71,4 +71,3 @@ cells/quality_inspection_cell.usda       # Stage 진입점, 아래 레이어 집
 | `metrics_collector.py` | 카운트, 불량률, 평균 사이클타임 |
 | `line_controller.py` | 한 사이클의 순서 조정과 안전 정지 |
 | `adapters/isaac_sim.py` | Isaac Sim 센서·구동기 연결 경계 |
-

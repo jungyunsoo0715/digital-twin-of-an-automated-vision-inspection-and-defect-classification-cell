@@ -6,7 +6,7 @@
 
 1. `cells/quality_inspection_cell.usda`를 Stage 진입점으로 연다.
 2. Stage 단위를 meter, Up Axis를 Z로 유지한다.
-3. `layouts/factory_layout.usda`의 placeholder를 실제 컨베이어, 로봇, 카메라, 펜스 Reference로 교체한다.
+3. `layouts/factory_layout.usda`의 MVP 프록시 도형을 실제 컨베이어, 로봇, 카메라, 펜스 Reference로 교체한다.
 4. 외부 에셋별 출처, 버전, 라이선스를 해당 `assets/*/README.md`에 기록한다.
 5. 원본 에셋 수정이 필요한 경우 수정본이 아니라 override 레이어를 먼저 검토한다.
 
@@ -56,4 +56,3 @@ hardware.command_robot_place(target="reject_bin")
 - 센서 이벤트 하나가 생산 사이클 하나만 시작한다.
 - 30개 연속 처리 중 제품 중첩, 이탈, 이중 집계가 없다.
 - 강제 걸림/픽업 실패 후 라인이 정지하고 Reset 뒤 다시 처리한다.
-
