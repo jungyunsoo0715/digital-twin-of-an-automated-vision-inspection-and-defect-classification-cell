@@ -29,6 +29,8 @@ python3 scripts/run_demo.py --parts 30 --seed 42
 python3 scripts/run_scenarios.py
 ```
 
+`run_scenarios.py`는 콘솔 출력과 함께 `data/results/`에 JSON 결과 파일을 저장합니다.
+
 패키지 설치 후에는 다음 명령도 사용할 수 있습니다.
 
 ```bash
