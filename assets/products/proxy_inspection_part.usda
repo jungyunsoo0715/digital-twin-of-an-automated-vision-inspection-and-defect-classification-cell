@@ -1,0 +1,28 @@
+#usda 1.0
+(
+    defaultPrim = "InspectionPart"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "InspectionPart"
+{
+    custom string project:assetType = "proxy_inspection_part"
+
+    def Cube "Body"
+    {
+        double size = 2
+        double3 xformOp:translate = (0, 0, 0.14)
+        double3 xformOp:scale = (0.18, 0.18, 0.14)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "DefectMarker"
+    {
+        double size = 2
+        uniform token purpose = "guide"
+        double3 xformOp:translate = (0.08, -0.08, 0.31)
+        double3 xformOp:scale = (0.04, 0.04, 0.01)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+}

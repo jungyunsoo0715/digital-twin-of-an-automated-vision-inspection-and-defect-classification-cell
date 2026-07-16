@@ -53,13 +53,13 @@ cells/quality_inspection_cell.usda       # Stage 진입점, 아래 레이어 집
   └─ layers/lighting.usda                # 조명·시각화
 ```
 
-- `assets/`: 다운로드한 원본 에셋과 라이선스 정보를 함께 보관한다.
+- `assets/`: 교체 가능한 프록시/원본 에셋과 라이선스 정보를 함께 보관한다.
 - `layouts/`: 장비 위치와 셀 계층만 담당한다.
 - `layers/`: 책임별 override를 담고 원본 모델을 직접 수정하지 않는다.
 - 반복 펜스·박스·부품은 instanceable Reference를 우선 사용한다.
 - 정상/고속 운전, 제품 종류처럼 교체 가능한 구성은 Variant 후보로 둔다.
 
-현재 USDA 파일은 에셋 경로가 정해지기 전에도 열 수 있도록 단순 도형으로 만든 MVP 프록시 레이아웃이다. 실제 에셋 도입 후 `factory_layout.usda`의 프록시 도형을 Reference prim으로 교체한다.
+현재 USDA 파일은 `assets/`의 프록시 에셋을 Reference로 배치한다. 실제 에셋 도입 시 같은 역할의 asset 파일을 교체하거나 `factory_layout.usda`의 Reference 경로만 바꾼다.
 
 ## 코드 책임
 

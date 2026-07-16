@@ -1,0 +1,55 @@
+#usda 1.0
+(
+    defaultPrim = "RejectRobot"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "RejectRobot"
+{
+    custom string project:assetType = "proxy_reject_robot"
+
+    def Cylinder "Base"
+    {
+        uniform token axis = "Z"
+        double height = 0.25
+        double radius = 0.45
+        double3 xformOp:translate = (0, 0, 0.125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def Cylinder "Pedestal"
+    {
+        uniform token axis = "Z"
+        double height = 0.75
+        double radius = 0.24
+        double3 xformOp:translate = (0, 0, 0.625)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def Cube "UpperArm"
+    {
+        double size = 2
+        double3 xformOp:translate = (-0.25, -0.18, 1.35)
+        double3 xformOp:rotateXYZ = (0, -28, 30)
+        double3 xformOp:scale = (0.18, 0.18, 0.75)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def Cube "Forearm"
+    {
+        double size = 2
+        double3 xformOp:translate = (-0.68, -0.48, 1.85)
+        double3 xformOp:rotateXYZ = (0, 62, 30)
+        double3 xformOp:scale = (0.16, 0.16, 0.6)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def Cube "Gripper"
+    {
+        double size = 2
+        double3 xformOp:translate = (-1.1, -0.72, 1.55)
+        double3 xformOp:scale = (0.2, 0.12, 0.08)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+}

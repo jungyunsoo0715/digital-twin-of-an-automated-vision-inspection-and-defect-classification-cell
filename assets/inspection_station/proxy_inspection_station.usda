@@ -1,0 +1,45 @@
+#usda 1.0
+(
+    defaultPrim = "InspectionStation"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "InspectionStation"
+{
+    custom string project:assetType = "proxy_inspection_station"
+
+    def Cube "LeftPost"
+    {
+        double size = 2
+        double3 xformOp:translate = (0, 1.05, 1.65)
+        double3 xformOp:scale = (0.08, 0.08, 1.65)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "RightPost"
+    {
+        double size = 2
+        double3 xformOp:translate = (0, -1.05, 1.65)
+        double3 xformOp:scale = (0.08, 0.08, 1.65)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "Crossbar"
+    {
+        double size = 2
+        double3 xformOp:translate = (0, 0, 3.25)
+        double3 xformOp:scale = (0.08, 1.13, 0.08)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Camera "Camera"
+    {
+        custom string project:assetRole = "inspection_camera"
+        float focalLength = 24
+        float horizontalAperture = 20.955
+        double3 xformOp:translate = (0, -1.0, 3.05)
+        double3 xformOp:rotateXYZ = (50, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+    }
+}

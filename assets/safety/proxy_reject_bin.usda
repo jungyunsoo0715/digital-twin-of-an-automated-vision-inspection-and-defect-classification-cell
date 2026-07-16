@@ -1,0 +1,51 @@
+#usda 1.0
+(
+    defaultPrim = "RejectBin"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "RejectBin"
+{
+    custom string project:assetType = "proxy_reject_bin"
+
+    def Cube "Bottom"
+    {
+        double size = 2
+        double3 xformOp:translate = (0, 0, 0.08)
+        double3 xformOp:scale = (0.55, 0.55, 0.08)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "FrontWall"
+    {
+        double size = 2
+        double3 xformOp:translate = (0, -0.52, 0.55)
+        double3 xformOp:scale = (0.55, 0.05, 0.55)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "BackWall"
+    {
+        double size = 2
+        double3 xformOp:translate = (0, 0.52, 0.55)
+        double3 xformOp:scale = (0.55, 0.05, 0.55)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "LeftWall"
+    {
+        double size = 2
+        double3 xformOp:translate = (-0.52, 0, 0.55)
+        double3 xformOp:scale = (0.05, 0.55, 0.55)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "RightWall"
+    {
+        double size = 2
+        double3 xformOp:translate = (0.52, 0, 0.55)
+        double3 xformOp:scale = (0.05, 0.55, 0.55)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+}

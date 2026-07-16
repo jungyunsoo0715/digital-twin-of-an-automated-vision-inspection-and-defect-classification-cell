@@ -6,7 +6,7 @@
 
 1. `cells/quality_inspection_cell.usda`를 Stage 진입점으로 연다.
 2. Stage 단위를 meter, Up Axis를 Z로 유지한다.
-3. `layouts/factory_layout.usda`의 MVP 프록시 도형을 실제 컨베이어, 로봇, 카메라, 펜스 Reference로 교체한다.
+3. `layouts/factory_layout.usda`의 프록시 Reference를 실제 컨베이어, 로봇, 카메라, 펜스 에셋 Reference로 교체한다.
 4. 외부 에셋별 출처, 버전, 라이선스를 해당 `assets/*/README.md`에 기록한다.
 5. 원본 에셋 수정이 필요한 경우 수정본이 아니라 override 레이어를 먼저 검토한다.
 
